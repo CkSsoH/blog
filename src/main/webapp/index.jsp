@@ -13,20 +13,15 @@
 			<h1> home </h1>
 		</div>
 		<table class="table table-hover">
-				<tr>
-					<td class="table-success"><a href="<%=request.getContextPath()%>/board/boardList.jsp">게시판</a></td>
-				</tr>
-				<tr>
-					<td class="table-danger"><a href="<%=request.getContextPath()%>/guestbook/guestbookList.jsp">방명록</a></td>
-				</tr>
-				<tr>
-					<td class="table-success"><a href="<%=request.getContextPath()%>/photo/photoList.jsp">사진</a></td>
-				</tr>
-				<!--
-				<tr>
-					<td><a href="< %=request.getContextPath()%>/pdf/pdfList.jsp">PDF자료실</a></td>
-				</tr>
-				 -->
+			<tr>
+				<td class="table-success"><a href="<%=request.getContextPath()%>/board/boardList.jsp">게시판</a></td>
+			</tr>
+			<tr>
+				<td class="table-danger"><a href="<%=request.getContextPath()%>/guestbook/guestbookList.jsp">방명록</a></td>
+			</tr>
+			<tr>
+				<td class="table-success"><a href="<%=request.getContextPath()%>/photo/photoList.jsp">사진</a></td>
+			</tr>
 		</table>
 	</div>
 </body>

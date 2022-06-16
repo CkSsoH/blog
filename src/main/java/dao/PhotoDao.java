@@ -9,10 +9,22 @@ import vo.Photo;
 public class PhotoDao {
 	
 	// 이미지 이름을 반환하는 메서드
-	//public String selectPhotoName(int photoNo) {
-	//	String photoName();
-		//아 놓쳤다..
-	//}
+	public String selectPhotoName(int photoNo) throws Exception{
+		Class.forName("org.mariadb.jdbc.Driver"); //드라이버 로딩
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs =null;
+		
+		//db접속
+		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/blog","root","java1234");
+
+		String PhotoName = "SELECT photo_name WHERE photo_no=?";
+		stmt= conn.prepareStatement(PhotoName);
+		stmt.setInt(1, photoNo);
+		
+		return PhotoName;
+		
+	}
 	
 	// 이미지 입력
 	public void insertPhoto(Photo photo) throws Exception{

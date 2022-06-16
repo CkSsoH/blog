@@ -2,6 +2,9 @@
 <%@page import="dao.GuestbookDao"%>
 <%@page import="vo.*"%>
 <%	
+	//메서드 생성
+	GuestbookDao guestbookDao = new GuestbookDao();
+	
 	// 번호, pw 받기
 	int guestbookNo = Integer.parseInt(request.getParameter("guestbookNo"));
 	String guestbookPw = request.getParameter("guestbookPw");
@@ -11,11 +14,9 @@
 	
 	//값 묶어서 처리
 	Guestbook guestbook = new Guestbook();
-	guestbook.guestbookNo = guestbookNo;
-	guestbook.guestbookPw = guestbookPw;
-
-	//dao호출
-	GuestbookDao guestbookDao = new GuestbookDao();
+	guestbook.setGuestbookNo(guestbookNo);
+	guestbook.setGuestbookPw(guestbookPw);
+	
 	int row = guestbookDao.deleteGuestbook(guestbookNo, guestbookPw);
 	
 	// 삭제 확인

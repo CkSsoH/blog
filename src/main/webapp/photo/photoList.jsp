@@ -9,10 +9,10 @@
 	if(request.getParameter("currentPage") != null) {
 		currentPage = Integer.parseInt(request.getParameter("currentPage")); 
 	}
-	System.out.println("currentPage : " + currentPage); 
+	System.out.println(currentPage+"<--photoList currentPage"); 
 	
 	// 페이지 알고리즘
-	int rowPerPage = 1;
+	int rowPerPage = 5;
 	int beginRow = (currentPage-1) * rowPerPage;
 
 	PhotoDao photoDao = new PhotoDao();
@@ -47,7 +47,7 @@
 			<h1>이미지 목록</h1>
 		</div>
 		<table class="table table-hover">
-			<tr>
+			<tr class="bg-light">
 				<%
 					// 한행의 5개의 이미지 출력(tr안에 td가 5개)
 					// 이미지가 3개  - tr 1 - td 5
@@ -61,29 +61,29 @@
 					System.out.println(list.size() + " <- list.size()");
 				
 					int endIdx = (((list.size()-1)/5)+1)*5; // 5의 배수가 되어야 한다.(한줄에 5개씩 출력하기로...)
-					System.out.println(endIdx+" <-- 10");
+					System.out.println(endIdx+" <-- endIdx");
 					
 				//	for(Photo p : list) { // size()만큼 반복되므로 5의배수가 아닐 수도 있다. 
 					for(int i=0; i<endIdx; i++) { // 01234, 0123456789
 						// tr을 닫고 새로운 tr 시작
 						if(i!=0 && i%5==0) { // 5일때(0을 제외한 5의배수일때) 
 				%>
-							</tr><tr>
+							</tr><tr class="bg-light">
 				<%			
 						}
 					
 						if(i<list.size()) {
 				%>
-							<td class="table-success">
-								<a href="<%=request.getContextPath()%>/photo/selectPhotoOne.jsp=photoNo=<%=list.get(i).photoNo%>">
-									<img src="<%=request.getContextPath()%>/upload/<%=list.get(i).photoName%>" width="100" height="100">
+							<td>
+								<a href="<%=request.getContextPath()%>/photo/photoOne.jsp?photoNo=<%=list.get(i).getPhotoNo()%>">
+									<img src="<%=request.getContextPath()%>/upload/<%=list.get(i).getPhotoName()%>" width="100" height="100">
 									<!--  상세보기에서는 원본이미지 크기로 -->
 								</a>
 							</td>
 				<%
 						} else {
 				%>
-							<td class="table-danger">&nbsp;</td>
+							<td>&nbsp;</td>
 				<%			
 						}
 					}
@@ -92,6 +92,26 @@
 		</table>
 		<div style= "text-align:right">
 			<a class= "btn btn-primary" href="<%=request.getContextPath()%>/photo/insertPhotoForm.jsp">글작성</a>
+		</div>
+			<div class="btn-group">
+				<!-- 페이지가 if 10페이지였다면 이전:9page, 다음:11page -->
+				<%
+					if(currentPage >1){ //현재페이지가 1이면 이전페이지가 존재해서는 안된다
+				%>
+					<a href="<%=request.getContextPath()%>/photo/photoList.jsp?currentPage=<%=currentPage-1%>" class="btn btn-outline-info">이전</a> 		
+				<%	
+					}
+				%>
+					<!-- 전체 행  마지막 페이지 알아내기
+						마지막 페이지 = 전체행 / rowPerPage -->
+				<%
+					if(currentPage <lastPage){
+				%>
+					<a href="<%=request.getContextPath()%>/photo/photoList.jsp?currentPage=<%=currentPage+1%>" class="btn btn-outline-info">다음</a>
+				<% 		
+					}
+				%>		
+				<!-- 다음페이지로 넘어가기 / 세부카테고리 리스트에서도 다음페이지 넘어가게 -->
 		</div>
 	</div>
 </body>

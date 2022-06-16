@@ -50,17 +50,17 @@
 	%>
 		<table class="table table-hover">
 			<tr>
-				<td class="table-success" ><%=g.writer %></td>
-				<td class="table-success" style="text-align:right"><%=g.createDate %></td>
+				<td class="table-success" ><%=g.getWriter()%></td>
+				<td class="table-success" style="text-align:right"><%=g.getCreateDate()%></td>
 			</tr>
 			<tr>
 				<td colspan="2" class="table-danger">
-				<%=g.guestbookContent %></td>
+				<%=g.getGuestbookContent() %></td>
 			</tr>
 		</table>
 		<div style="text-align:right">
-			<a href="<%=request.getContextPath()%>/guestbook/updateGuestbookForm.jsp?guestbookNo=<%=g.guestbookNo%>" class="btn btn-primary" role="button">수정</a>
-			<a href="<%=request.getContextPath()%>/guestbook/deleteGuestbookForm.jsp?guestbookNo=<%=g.guestbookNo%>" class="btn btn-danger" role="button">삭제</a>
+			<a href="<%=request.getContextPath()%>/guestbook/updateGuestbookForm.jsp?guestbookNo=<%=g.getGuestbookNo()%>" class="btn btn-primary" role="button">수정</a>
+			<a href="<%=request.getContextPath()%>/guestbook/deleteGuestbookForm.jsp?guestbookNo=<%=g.getGuestbookNo()%>" class="btn btn-danger" role="button">삭제</a>
 		</div>
 	<%	
 		}

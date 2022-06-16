@@ -22,9 +22,9 @@
 	
 	//묶어주기
 	Guestbook guestbook = new Guestbook();
-	guestbook.writer = writer;
-	guestbook.guestbookPw = guestbookPw;
-	guestbook.guestbookContent = guestbookContent;
+	guestbook.setGuestbookContent(guestbookContent);
+	guestbook.setGuestbookPw(guestbookPw);
+	guestbook.setGuestbookContent(guestbookContent);
 	
 	//호출
 	guestbookDao.insertGuestbook(guestbook);

@@ -7,8 +7,6 @@ public class GuestbookDao {
 	// 생성자 메서드
 	public GuestbookDao() {}
 	
-	//수정(guestbookOne, updateGuestbook) 프로세스 구현
-	
 	//updateGuestbookForm.jsp에서 호출
 	public Guestbook selectGuestbookOne(int guestbookNo) throws Exception {
 		Guestbook guestbook = null;

@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="dao.PhotoDao"%>
+<%@ page import="vo.*" %>
 <%
 	// 번호, 비밀번호 받아오기
 	int photoNo = Integer.parseInt(request.getParameter("photoNo"));
 	String photoPw = request.getParameter("photoPw");
 
 	// 디버깅
-	System.out.println(photoNo + "<--deletePhotoForm No");
-	System.out.println(photoPw + "<--deletePhotoForm Pw");
+	System.out.println(photoNo + "<--deletePhotoForm photoNo");
+	System.out.println(photoPw + "<--deletePhotoForm photoPw");
 %>
 <!DOCTYPE html>
 <html>
