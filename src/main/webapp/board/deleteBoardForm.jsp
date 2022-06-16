@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%	
-	//해당 번호 불러오기
-	int boardNo = Integer.parseInt(request.getParameter("boardNo"));
+<%@page import="dao.BoardDao"%>
+<%@ page import="vo.*" %>
+<%@ page import="java.util.*" %>
+<%
+	BoardDao boardDao = new BoardDao();//dao객체 생성
+	int boardNo =Integer.parseInt(request.getParameter("boardNo"));
 %>
 <!DOCTYPE html>
 <html>

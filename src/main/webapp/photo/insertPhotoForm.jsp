@@ -20,7 +20,7 @@
 			5) 복잡한 코드를 통해서만 바이너리 내용을 넘겨 받을 수있다.
 			6) 외부 라이브러리(cos.jar)를 사용해서 복잡은 코드 간단하게 구현하자.
 		-->
-		<form action="<%=request.getContextPath()%>/insertPhotoAction.jsp" method="post" enctype="multipart/form-data">
+		<form action="<%=request.getContextPath()%>/photo/insertPhotoAction.jsp" method="post" enctype="multipart/form-data">
 			<table class="table table-hover">
 				<tr>
 					<td class="table-success">이미지파일</td>

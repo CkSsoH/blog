@@ -28,7 +28,7 @@
 						<td class="table-success">번호</td>
 						<td class="table-danger"><input class="text-center" type="text" name="photoNo" value="<%=photoNo%>" readonly="readonly"></td>
 						<td class="table-success">비밀번호</td>
-						<td class="table-danger"><input type="password" name="photoPw" value=""></td>
+						<td class="table-danger"><input type="password" name="photoPw" value="photoPw"></td>
 					</tr>
 					<tr>
 						<td colspan="4">
