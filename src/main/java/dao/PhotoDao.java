@@ -16,7 +16,7 @@ public class PhotoDao {
 		ResultSet rs =null;
 		
 		//db접속
-		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/blog","root","java1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 
 		String PhotoName = "SELECT photo_name WHERE photo_no=?";
 		stmt= conn.prepareStatement(PhotoName);
@@ -34,7 +34,7 @@ public class PhotoDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; 
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog"; 
 		String dbuser = "root"; 
 		String dbpw = "java1234";
 		// 불러오기
@@ -83,7 +83,7 @@ public class PhotoDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog"; 
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog"; 
 		String dbuser = "root";
 		String dbpw = "java1234"; 
 		String sql = "DELETE FROM photo WHERE photo_no=? AND photo_pw=?";
@@ -114,7 +114,7 @@ public class PhotoDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		String sql = "SELECT COUNT(*) cnt FROM photo";
@@ -144,7 +144,7 @@ public class PhotoDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root"; 
 		String dbpw = "java1234"; 
 		String sql = "SELECT photo_no photoNo, photo_name photoName, photo_original_name photoOriginalName, photo_type photoType, photo_pw photoPw, writer, create_date createDate, update_date updateDate FROM photo ORDER BY create_date DESC LIMIT ?, ?";
@@ -193,7 +193,7 @@ public class PhotoDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		String sql = "SELECT photo_no photoNo, photo_name photoName, writer, create_date createDate, update_date updateDate FROM photo WHERE photo_no=?";

@@ -17,7 +17,7 @@ public class BoardDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 		System.out.println(conn + " : conn결과");//디버깅
 		
 		String sql="SELECT category_name categoryName, COUNT(*) cnt FROM board GROUP BY category_name";
@@ -48,7 +48,7 @@ public class BoardDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 
 		if(categoryName == "") { //카테고리 이름이 공백일때
 			sql = "SELECT board_no boardNo, category_name categoryName, board_title boardTitle, create_date createDate FROM board ORDER BY create_date DESC LIMIT ?, ?";
@@ -102,7 +102,7 @@ public class BoardDao {
 		ResultSet rs = null;
 		
 		//db접속
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 		System.out.println(conn + " : conn결과");//디버깅
 		
 		//쿼리문 가져와서 저장
@@ -129,7 +129,7 @@ public class BoardDao {
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 	
-	conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+	conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 	
 	String sql ="SELECT COUNT(*) cnt FROM board";
 	stmt = conn.prepareStatement(sql);
@@ -153,7 +153,7 @@ public class BoardDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 		//쿼리문 저장
 		String sql = "SELECT board_no BoardNo,category_name categoryName,board_title boardTitle, board_content boardContent,board_pw boardPw, create_date createDate FROM board ORDER BY create_date DESC LIMIT ?, ?";
 		stmt = conn.prepareStatement(sql);
@@ -188,7 +188,7 @@ public class BoardDao {
 			PreparedStatement stmt = null;
 			ResultSet rs =null;
 			//db접속
-			conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+			conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 			System.out.println("conn 접속 성공"+conn);
 			//쿼리문 저장
 			String sql="SELECT board_no boardNo, category_name categoryName, board_title boardTitle,board_content boardContent, create_date createDate, update_date updateDate FROM board where board_no=?";
@@ -221,7 +221,7 @@ public class BoardDao {
 		PreparedStatement stmt = null;
 		
 		//db접속
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 		//쿼리문 저장
 		String sql ="INSERT INTO board(category_name, board_title,board_content,board_pw,create_date,update_date) VALUES(?,?,?,?,NOW(),NOW())";
 		stmt = conn.prepareStatement(sql); //쿼리문 실행 저장
@@ -249,7 +249,7 @@ public class BoardDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		//db접속
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 		//쿼리문 저장
 		String sql="UPDATE board SET category_name =?, board_title = ?, board_content = ?, update_date = NOW()  WHERE board_no = ? AND board_pw = ?";
 		stmt= conn.prepareStatement(sql);
@@ -281,7 +281,7 @@ public class BoardDao {
 		PreparedStatement stmt = null;
 		
 		//db접속
-		conn = DriverManager.getConnection("jdbc:mariadb://3.36.57.93:3306/blog","root","mariadb1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
 		
 		//쿼리문 저장
 		String sql="DELETE FROM board WHERE board_no=? and board_pw =?";

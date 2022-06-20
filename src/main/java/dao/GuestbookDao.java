@@ -15,7 +15,7 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
@@ -48,7 +48,7 @@ public class GuestbookDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
@@ -76,7 +76,7 @@ public class GuestbookDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
@@ -106,7 +106,7 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		String sql = "INSERT INTO guestbook(guestbook_content, writer, guestbook_pw, create_date, update_date) VALUES(?,?,?,NOW(),NOW())";
@@ -135,7 +135,7 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		String sql = "SELECT COUNT(*) cnt FROM guestbook";
@@ -161,7 +161,7 @@ public class GuestbookDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String dburl = "jdbc:mariadb://localhost:3306/blog";
+		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
 		String dbpw = "java1234";
 		String sql = "SELECT guestbook_no guestbookNo, guestbook_content guestbookContent, writer, create_date createDate FROM guestbook ORDER BY create_date DESC LIMIT ?, ?";
