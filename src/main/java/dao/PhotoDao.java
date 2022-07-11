@@ -16,7 +16,7 @@ public class PhotoDao {
 		ResultSet rs =null;
 		
 		//db접속
-		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","java1234");
+		conn = DriverManager.getConnection("jdbc:mariadb://3.34.127.124:3306/blog","root","mariadb1234");
 
 		String PhotoName = "SELECT photo_name WHERE photo_no=?";
 		stmt= conn.prepareStatement(PhotoName);
@@ -36,7 +36,7 @@ public class PhotoDao {
 		
 		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog"; 
 		String dbuser = "root"; 
-		String dbpw = "java1234";
+		String dbpw = "mariadb1234";
 		// 불러오기
 		String sql = "INSERT INTO photo(photo_name, photo_original_name, photo_type, photo_pw, writer, create_date, update_date)VALUES(?, ?, ?, ?, ?, NOW(), NOW())";
 		
@@ -85,7 +85,7 @@ public class PhotoDao {
 		
 		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog"; 
 		String dbuser = "root";
-		String dbpw = "java1234"; 
+		String dbpw = "mariadb1234"; 
 		String sql = "DELETE FROM photo WHERE photo_no=? AND photo_pw=?";
 		
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
@@ -116,7 +116,7 @@ public class PhotoDao {
 		
 		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
-		String dbpw = "java1234";
+		String dbpw = "mariadb1234";
 		String sql = "SELECT COUNT(*) cnt FROM photo";
 		
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
@@ -146,7 +146,7 @@ public class PhotoDao {
 		
 		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root"; 
-		String dbpw = "java1234"; 
+		String dbpw = "mariadb1234"; 
 		String sql = "SELECT photo_no photoNo, photo_name photoName, photo_original_name photoOriginalName, photo_type photoType, photo_pw photoPw, writer, create_date createDate, update_date updateDate FROM photo ORDER BY create_date DESC LIMIT ?, ?";
 		
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);
@@ -195,7 +195,7 @@ public class PhotoDao {
 		
 		String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 		String dbuser = "root";
-		String dbpw = "java1234";
+		String dbpw = "mariadb1234";
 		String sql = "SELECT photo_no photoNo, photo_name photoName, writer, create_date createDate, update_date updateDate FROM photo WHERE photo_no=?";
 		
 		conn = DriverManager.getConnection(dburl, dbuser, dbpw);

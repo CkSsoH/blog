@@ -69,7 +69,7 @@
 						</td>
 					<tr>	
 						<td class="table-success">boardPw</td>
-						<td class="table-danger"><input type="password" name="boardPw" value="<%=board.getBoardPw()%>"></td>
+						<td class="table-danger"><input type="password" name="boardPw"></td>
 					</tr>
 					<tr>
 						<td colspan="2">

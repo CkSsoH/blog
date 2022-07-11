@@ -27,6 +27,9 @@
 	board.setBoardContent(boardContent); //내용
 	board.setBoardPw(boardPw); //비밀번호
 	
+	//호출
+	boardDao.insertBoard(board);
+	
 	// 입력 후 boardList 로 이동
 	response.sendRedirect(request.getContextPath() + "/board/boardList.jsp");
 %>

@@ -22,7 +22,7 @@
 	
 	//묶어주기
 	Guestbook guestbook = new Guestbook();
-	guestbook.setGuestbookContent(guestbookContent);
+	guestbook.setWriter(writer);
 	guestbook.setGuestbookPw(guestbookPw);
 	guestbook.setGuestbookContent(guestbookContent);
 	

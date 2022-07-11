@@ -8,9 +8,9 @@
 
 	//마리아 접속
 	Connection conn = null;
-	String dburl = "jdbc:mariadb://localhost:3306/blog";
+	String dburl = "jdbc:mariadb://3.34.127.124:3306/blog";
 	String dbuser = "root";
-	String dbpw = "java1234";
+	String dbpw = "mariadb1234";
 	conn = DriverManager.getConnection(dburl, dbuser, dbpw);
 	
 	//불러올 쿼리 저장 (categoryName)
